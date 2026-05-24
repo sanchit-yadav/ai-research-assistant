@@ -1,5 +1,5 @@
 from pathlib import Path
-from app.rag.pdf_loader import load_pdf
+from backend.app.rag.pdf_loader import load_pdf
 
 BASE_DIR = Path(__file__).resolve().parent
 pdf_path = BASE_DIR.parent / "data" / "sample.pdf"

@@ -1,5 +1,5 @@
 from fastapi import APIRouter, UploadFile, File, HTTPException
-from app.services.rag_pipeline import build_index, ask_question
+from backend.app.services.rag_pipeline import build_index, ask_question
 import os
 
 router = APIRouter()

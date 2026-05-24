@@ -1,8 +1,8 @@
-from app.rag.pdf_loader import load_pdf
-from app.rag.text_splitter import split_documents
-from app.rag.vector_store import create_vector_store
-from app.rag.llm import get_answer
-from app.rag.memory import add_message, get_history, format_history
+from backend.app.rag.pdf_loader import load_pdf
+from backend.app.rag.text_splitter import split_documents
+from backend.app.rag.vector_store import create_vector_store
+from backend.app.rag.llm import get_answer
+from backend.app.rag.memory import add_message, get_history, format_history
 
 vector_store = None
 
