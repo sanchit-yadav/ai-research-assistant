@@ -1,4 +1,26 @@
+# Virtual Environment
 venv/
+env/
+
+# Python cache
 __pycache__/
+*.pyc
+
+# Environment variables
 .env
-.chromadb/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Vector DB
+vectorstore/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
