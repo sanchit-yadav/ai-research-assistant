@@ -4,6 +4,10 @@ An AI-powered Research Assistant built using FastAPI, Streamlit, LangChain, Chro
 This project allows users to upload PDF documents and ask contextual questions using Retrieval-Augmented Generation (RAG).
 
 ---
+# Demo
+
+![Project Demo](demo/ai-research_demo_.gif)
+
 
 # Live Deployment
 
