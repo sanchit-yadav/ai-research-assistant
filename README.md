@@ -197,12 +197,7 @@ Response:
 
 # Screenshot
 
-
-```bash
 ![AI assistant screenshot](screenshots/ai_assistant_screenshot.png)
-```
-
----
 
 # Future Improvements
 
