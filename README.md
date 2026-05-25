@@ -199,7 +199,7 @@ Response:
 
 
 ```bash
-screenshots\ai_assistant_screenshot.png
+![AI assistant screenshot](screenshots/ai_assistant_screenshot.png)
 ```
 
 ---
