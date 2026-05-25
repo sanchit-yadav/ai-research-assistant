@@ -1,103 +1,123 @@
-# 🤖 AI Research Assistant
+# AI Research Assistant
 
-An AI-powered Research Assistant built using **FastAPI**, **LangChain**, **Google Gemini API**, and **RAG (Retrieval-Augmented Generation)**.
-
-This project allows users to upload research papers/documents and interact with them using AI-powered contextual conversations.
-
----
-
-# 🚀 Features
-
-- 📄 PDF document upload and processing
-- 🔍 Semantic search using vector embeddings
-- 💬 Conversational AI chat interface
-- 🧠 Retrieval-Augmented Generation (RAG)
-- ⚡ FastAPI backend
-- 🔗 Google Gemini API integration
-- 📚 Context-aware responses
+An AI-powered Research Assistant built using FastAPI, Streamlit, LangChain, ChromaDB, and Google Gemini API.  
+This project allows users to upload PDF documents and ask contextual questions using Retrieval-Augmented Generation (RAG).
 
 ---
 
-# 🛠️ Tech Stack
+# Live Deployment
+
+## Frontend
+[Open Streamlit App](https://ai-research-assistant-cxxtknavp8bs4gefnrgs59.streamlit.app/)
+
+## Backend API
+[Open Backend API](https://railway.com/project/627481c8-2fe9-4a14-a8c5-b063cb2aa6bc?)
+
+---
+
+# Features
+
+- PDF Upload & Processing
+- AI-powered Question Answering
+- Retrieval-Augmented Generation (RAG)
+- Semantic Search using Vector Database
+- FastAPI Backend
+- Streamlit Frontend
+- Google Gemini Integration
+- ChromaDB Vector Storage
+- Clean UI for Research Assistance
+
+---
+
+# Tech Stack
 
 ## Backend
 - FastAPI
-- Python
-
-## AI/ML
 - LangChain
-- Google Gemini API
 - ChromaDB
-- Sentence Transformers
+- Google Gemini API
+- HuggingFace Embeddings
 
-## Other Tools
-- Python-dotenv
-- Uvicorn
-- PyPDF
+## Frontend
+- Streamlit
+- Requests
+
+## Deployment
+- Backend - Railway
+- Frontend - Streamlit cloud
 
 ---
 
-# 📂 Project Structure
+# Project Structure
 
 ```bash
 AI-RESEARCH-ASSISTANT/
 │
 ├── backend/
+│   │
 │   ├── app/
+│   │   │
 │   │   ├── api/
+│   │   │   ├── __init__.py
+│   │   │   └── routes.py
+│   │   │
 │   │   ├── rag/
+│   │   │
 │   │   ├── services/
+│   │   │   ├── __pycache__/
+│   │   │   └── rag_pipeline.py
+│   │   │
+│   │   ├── __init__.py
 │   │   └── main.py
 │   │
-│   ├── data/
 │   ├── models/
-│   └── chromadb/
+│   ├── data/
+│   │
+│   └── tests/
+│       ├── test_pdf.py
+│       └── test_rag.py
 │
 ├── frontend/
+│   ├── app.py
+│   └── requirements.txt
+│
 ├── screenshots/
-├── app.py
+│   └── ai assistant screenshot.png
+│
+├── .env
+├── .env.example
+├── .gitignore
+├── README.md
 ├── requirements.txt
-├── runtime.txt
-└── README.md
+└── runtime.txt
 ```
 
 ---
 
-# ⚙️ Installation
+# Application Workflow
+
+1. User uploads PDF document
+2. PDF content is processed and split into chunks
+3. Text embeddings are generated
+4. Embeddings stored in ChromaDB
+5. User asks questions
+6. Relevant chunks retrieved
+7. Gemini LLM generates contextual response
+
+---
+
+# Installation
 
 ## Clone Repository
 
 ```bash
-git clone https://github.com/sanchit-yadav/ai-research-assistant.git
+git clone https://github.com/sanchit-yadav/ai-research-assistant
+cd AI-RESEARCH-ASSISTANT
 ```
 
 ---
 
-## Move Into Project Folder
-
-```bash
-cd ai-research-assistant
-```
-
----
-
-## Create Virtual Environment
-
-### Windows
-
-```bash
-python -m venv venv
-venv\Scripts\activate
-```
-
-### Linux / Mac
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
----
+# Backend Setup
 
 ## Install Dependencies
 
@@ -105,62 +125,107 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
----
-
-# 🔑 Environment Variables
-
-Create a `.env` file:
-
-```env
-GOOGLE_API_KEY=your_google_gemini_api_key
-```
-
----
-
-# ▶️ Run Backend Server
+## Run Backend
 
 ```bash
 uvicorn backend.app.main:app --reload
 ```
 
----
+Backend runs on:
 
-# 🌐 API Documentation
-
-After running the server:
-
-```text
-http://127.0.0.1:8000/docs
+```bash
+http://127.0.0.1:8000
 ```
 
 ---
 
-# 📸 Screenshots
+# Frontend Setup
 
-(Add screenshots here later)
+## Move to Frontend
+
+```bash
+cd frontend
+```
+
+## Install Frontend Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+## Run Streamlit App
+
+```bash
+streamlit run app.py
+```
+
+Frontend runs on:
+
+```bash
+http://localhost:8501
+```
 
 ---
 
-# 🚀 Future Improvements
+# Environment Variables
 
-- Multi-document support
-- Chat history memory
-- Frontend chat UI
-- User authentication
-- Deployment integration
-- Citation-aware responses
-- PDF summary export
+Create a `.env` file in root directory.
+
+```env
+GEMINI_API_KEY=your_google_gemini_api_key
+```
 
 ---
 
-# 👨‍💻 Author
+# API Endpoint
 
-Sanchit Yadav
+## Home Route
 
-- GitHub: https://github.com/sanchit-yadav
+```http
+GET /
+```
+
+Response:
+
+```json
+{
+  "status": "running"
+}
+```
 
 ---
 
-# ⭐ Project Status
+# Screenshot
 
-Currently under active development.
+
+```bash
+screenshots\ai_assistant_screenshot.png
+```
+
+---
+
+# Future Improvements
+
+- User Authentication
+- Multiple PDF Upload
+- Conversation Memory
+- Voice Input
+- Docker Support
+- Database Integration
+- Streaming Responses
+- Dark Mode UI
+
+---
+
+# Author
+
+## Sanchit Yadav
+
+B.Tech CSE Student  
+Aspiring AI/ML Engineer
+
+---
+
+# License
+
+This project is developed for educational and portfolio purposes.
